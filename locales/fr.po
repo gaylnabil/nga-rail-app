@@ -1,0 +1,4 @@
+"add": "Ajputer",
+"page": "Page"
+"selection": "Sélection"
+"home": "maison"

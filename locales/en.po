@@ -1,0 +1,4 @@
+"add": "add",
+"page": "page"
+"selection": "selection"
+"home": "home"
