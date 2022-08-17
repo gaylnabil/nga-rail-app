@@ -8,10 +8,5 @@ class HomeController < ApplicationController
       # flash.now[:notice] = "Logged in successfully"
       # flash.now[:alert] = "Invalid username or password"
     end
-
-<<<<<<< HEAD
   end
 end
-=======
-
->>>>>>> 598ff4451dd6c086fc2a4d3b8a030174f04b4c2c
