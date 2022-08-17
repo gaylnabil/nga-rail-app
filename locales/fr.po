@@ -1,0 +1,3 @@
+"add": "Ajputer",
+"page": "Page"
+"selection": "Sélection"

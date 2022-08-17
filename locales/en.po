@@ -1,2 +1,3 @@
 "add": "add",
 "page": "page"
+"selection": "selection"
