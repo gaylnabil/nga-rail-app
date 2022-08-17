@@ -1,0 +1,11 @@
+<h1>Editing user</h1>
+
+<%# Partial is a Rails syntax that includes _from.html.erb %>
+<%= render "form", user: @user %>
+
+<br>
+
+<div>
+  <%= link_to "Show this user", @user %> |
+  <%= link_to "Back to users", users_path %>
+</div>

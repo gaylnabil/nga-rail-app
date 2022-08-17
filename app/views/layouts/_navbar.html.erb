@@ -1,0 +1,63 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <div class="container-fluid">
+    <%= link_to  "NGA Ruby on Rails", root_path, class: "navbar-brand" %>
+    
+    <%# <a class="navbar-brand" href="/">NGA Ruby on Rails</a> %>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mx-auto">
+
+        <%# <li class="nav-item">
+           link_to_unless_current("Home", {controller: "home", action: "index" }) 
+        </li> %>
+        <li class="nav-item">
+
+          <%# Check if current page is active %>
+          <% is_active = "active" if controller.controller_name == "home" %>    
+          <%# link_to is a Rails framework Syntax  %>
+          <%= link_to  "Home", root_path, class: "nav-link #{is_active}", aria: {current: "page"} %>
+          <%# link_to  "Home", root_path, class: "nav-link", "aria-current" => "page" %>
+        </li>
+        <li class="nav-item">
+
+          <% is_active = controller.controller_name == "about" ? "active" : "" %> 
+
+          <%= link_to  "About", about_path, class: "nav-link #{is_active}" %>
+        </li>
+
+        <li class="nav-item">
+
+          <% is_active = controller.controller_name == "users" && controller.action_name == "index" ? "active" : "" %> 
+
+          <%= link_to  "All Users", users_path, class: "nav-link #{is_active}" %>
+        </li>
+
+        <% is_active = controller.controller_name == "users" || controller.controller_name == "sessions" ? "active" : "" %>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle <%= is_active %>" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <% if Current.user %>
+                <%= Current.user.name %>
+              <% else %>
+              Account
+            <% end %>
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <% if Current.user %>
+                  <li> <%= link_to 'Profile', user_path(Current.user), class: "dropdown-item" %></li>
+                  <li> <%= link_to 'Edit Password', edit_password_path, class: "dropdown-item" %></li>
+                  <li><%= button_to  "Logout", logout_path, method: :delete, class: "dropdown-item"%></li>
+                  
+              <% else %>
+                  <li><%= link_to  "Login", login_path, class: "dropdown-item"%></li>
+                  <li><%= link_to  "Register", new_user_path, class: "dropdown-item"%></li>
+                  
+              <% end %>
+          </ul>
+        </li>
+      </ul> 
+      
+    </div>
+  </div>
+</nav>

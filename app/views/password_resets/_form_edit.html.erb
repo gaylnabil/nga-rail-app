@@ -1,0 +1,27 @@
+<%= form_with(model: @user, url: edit_reset_password_path(token: params[:token])) do |form| %>
+    <% if form.object.errors.any? %>
+      <div style="color: red">
+        <h2><%= pluralize(form.object.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+        <ul>
+          <% form.object.errors.each do |error| %>
+            <li><%= error.full_message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="mb-3">
+      <%= form.label :password, class:"form-label" %>
+      <%= form.password_field :password, required: true, class: "form-control", placeholder: "Enter new Password"  %>
+    </div>
+
+    <div class="mb-3">
+      <%= form.label :password_confirmation, class:"form-label" %>
+      <%= form.password_field :password_confirmation, required: true, class: "form-control", placeholder: "Confirmation Password"  %>
+    </div>
+
+    <div class="mb-3">
+      <%= form.submit value:"Update Password", class: "btn btn-primary" %>
+    </div>
+<% end %>
