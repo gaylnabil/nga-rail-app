@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'faq/index'
   get 'password/reset', to:'password_resets#new', as: :reset_password
   post 'password/reset', to:'password_resets#create'
   
