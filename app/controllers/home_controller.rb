@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
-  
+
   # GET to home page
   def index
     @control_value = "Welcome to the Home Controller and show it on home page html.erb"
@@ -9,6 +9,6 @@ class HomeController < ApplicationController
       # flash.now[:notice] = "Logged in successfully"
       # flash.now[:alert] = "Invalid username or password"
     end
-    
+
   end
 end
