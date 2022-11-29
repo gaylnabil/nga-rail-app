@@ -1,0 +1,23 @@
+<h1>Reset your password</h1>
+
+<p>
+
+  <%
+=begin%>
+   getting all attributes from mailers/password_mailer.rb in the "reset" function
+  <%
+=end%>
+  <%= @greeting %>, <%= @name %> (<%= @email %>)
+
+</p>
+
+<p>
+  You sent to us that you need to reset your password, please click the link below.
+</p>
+
+<%
+=begin%>
+ Message for sending a link to user for reset the password
+<%
+=end%>
+<%= link_to "Reset password", edit_reset_password_url(token: @token) %>

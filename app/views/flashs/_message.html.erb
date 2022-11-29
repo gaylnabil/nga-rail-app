@@ -1,0 +1,14 @@
+
+<%# flash.now[:status_name] is a Rails object array that has all messages from a controller that appears once on the page %>
+<% if flash.now[:notice] %>
+    <div class="alert alert-info mt-4" role="alert">
+        <%= flash.now[:notice] %>
+    </div>
+<% end %>
+
+<% if flash.now[:alert] %>
+    <div class="alert alert-warning mt-4" role="alert">
+        <%= flash.now[:alert] %>
+    </div>
+<% end %>
+

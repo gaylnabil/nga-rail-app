@@ -1,0 +1,17 @@
+<%= form_with(url: reset_password_path) do |form| %>
+    <% if flash[:alert] %>
+    <div class="alert alert-danger mt-4" role="alert">
+      <ul>
+          <li><%= flash[:alert] %></li>
+      </ul>
+    </div>
+  <% end %>
+    <h1><%= flash[:alert] %></h1>
+  <div class="mb-3">
+    <%= form.label :email, class:"form-label" %>
+    <%= form.text_field :email, class: "form-control", required: true, placeholder: "Enter your Email" %>
+  </div>
+  <div class="mb-3">
+     <%= form.submit value:"Reset Password", class: "btn btn-primary" %>
+  </div>
+<% end %>
