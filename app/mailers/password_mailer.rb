@@ -22,6 +22,7 @@ class PasswordMailer < ApplicationMailer
     puts "line: 20"
     puts "Variable name: [ '@email' ] "
     puts "#{@email}"
+    puts "******************************************************************************"
     puts "******************************************************************************\n"
 
   end
